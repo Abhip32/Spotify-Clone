@@ -7,6 +7,7 @@ import ChannelReel from './Reel';
 import { useRouter } from 'next/navigation';
 
 const SearchContent = () => {
+  if (typeof window !== "undefined") {
   const router=useRouter()
   const [browseItems, setBrowseItems] = useState([]);
   
@@ -190,7 +191,11 @@ const SearchContent = () => {
         </div>
         
         </div>
-  );
+  );}
+  else
+  {
+    return(<h1>Loading</h1>)
+  }
 };
 
 export default SearchContent;

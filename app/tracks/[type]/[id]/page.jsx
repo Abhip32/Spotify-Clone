@@ -8,6 +8,7 @@ import { getPlaylistInfo, searchTracks } from '@/utils/Search'
 import { useParams, useRouter } from 'next/navigation';
 import { setPlayingItem } from '@/utils/Home'
 const Tracks = () => {
+  if (typeof window !== "undefined") {
   const router = useParams();
   console.log(router)
   const [tracks,setTracks]= useState([])
@@ -113,7 +114,13 @@ const Tracks = () => {
       </div>
             </div>
         </Sidebar>
-  )
+  )}
+  else
+  {
+    return (
+      <h1>Loading</h1>
+    )
+  }
 }
 
 export default Tracks

@@ -9,6 +9,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
 const HomeContent = () => {
+    if (typeof window !== "undefined") {
     const router=useRouter();
     const [showAllFeatured, setShowAllFeatured] = useState(false);
     const [showAllArtists, setShowAllArtists] = useState(false);
@@ -175,7 +176,10 @@ const HomeContent = () => {
         </div>
 
         
-    )
+    )}
+    else{
+        return <h1>Loading</h1>
+    }
 }
 
 export default HomeContent

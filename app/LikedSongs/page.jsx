@@ -6,6 +6,7 @@ import { AiFillHeart,AiFillPlayCircle } from 'react-icons/ai'
 import moment from 'moment'
 
 const LikedSongs = (props) => {
+  if (typeof window !== "undefined") {
     const [topItems,setTopitems] = useState([])
     useEffect(()=>{
         getTopitemsM().then((items) =>{
@@ -87,7 +88,11 @@ const LikedSongs = (props) => {
       </div>
             </div>
         </Sidebar>
-  )
+  )}
+  else
+  {
+    return(<h1>Loading</h1>)
+  }
 }
 
 export default LikedSongs
