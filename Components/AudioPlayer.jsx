@@ -30,7 +30,7 @@ const AudioPlayer = ({ src }) => {
   };
 
   return (
-    <div style={{width:"70vw",padding:"1vw"}}>
+    <div style={{width:"70vw"}}>
       <audio
         ref={audioRef}
         src={src}
