@@ -31,7 +31,7 @@ const HomeContent = () => {
     const [topArtists, setTopArtists] = useState([])
     useEffect(() => {
 
-        if(window.location.href.includes('acess_token'))
+        if(window.location.href.includes('access_token'))
         {     
             getUserInfo(window.location.href).then(async(data)=>{
                 window.location.reload();
