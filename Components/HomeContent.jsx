@@ -34,7 +34,6 @@ const HomeContent = () => {
         if(window.location.href.includes('acess_token'))
         {     
             getUserInfo(window.location.href).then(async(data)=>{
-                window.location.reload();
      
         })
         }
