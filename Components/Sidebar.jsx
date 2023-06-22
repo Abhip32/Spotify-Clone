@@ -37,7 +37,7 @@ const Sidebar = ({ children }) => {
             <nav className="bg-black fixed top-0 w-full h-16 flex justify-center items-center">
               <div className="Logo p-5">
                 <img
-                  src="/images/logo.png"
+                  src="/images/Logo.png"
                   className="h-8"
                   alt="spotify"
                 />
@@ -48,7 +48,7 @@ const Sidebar = ({ children }) => {
             <div style={{width:"100vw",height:"71vh",overflowX:"hidden"}}>
                 {children}
               </div>
-              <div style={{width:"100vw",height:"12vh",overflow:"hidden"}}>
+              <div style={{width:"100vw",height:"15vh",overflow:"hidden"}}>
                   <Player type="mobile"/>
               </div>
             </div>

@@ -37,12 +37,12 @@ const Tracks = () => {
         <Sidebar>
             <div className="w-full b" style={{ backgroundImage: "linear-gradient(to bottom, #0047AB, black)",minHeight:"100vh"}}>
             <div className='flex p-10 gap-10 items-center'> 
-                <img className="Icon w-1/4" src={playlistData.images?.length >0 ? playlistData.images[0].url:'/images/unknown.png'}  style={{boxShadow:"1px 1px 20px black",padding:"30px",backgroundImage:"linear-gradient(145deg, #b24592, black])"}}/>
+                <img className="Icon w-[30vh]" src={playlistData.images?.length >0 ? playlistData.images[0].url:'/images/unknown.png'}  style={{boxShadow:"1px 1px 20px black",padding:"10px",backgroundImage:"linear-gradient(145deg, #b24592, black])"}}/>
         
                     <div className="info">
-            <h2 className='text-xl font-semibold' style={{fontSize:"2vh"}}>{router.type}</h2>
-            <h1 className='font-semibold' style={{fontSize:"3vw"}}>{playlistData.name}</h1>
-            <h3> <a  className='text-xl font-semibold' style={{fontSize:"2vh"}} href={JSON.parse(localStorage.getItem('spotify-data'))?.userUrl}>
+            <h2 className='text-xl font-semibold text-white ' style={{fontSize:"2vh"}}>{router.type}</h2>
+            <h1 className='font-semibold text-white ' style={{fontSize:"3vw"}}>{playlistData.name}</h1>
+            <h3> <a  className='text-xl font-semibold text-white ' style={{fontSize:"2vh"}} href={JSON.parse(localStorage.getItem('spotify-data'))?.userUrl}>
                     <span> {playlistData.description} &nbsp; | &nbsp; Followers {playlistData.followers?.total}</span>
             </a></h3>
         </div>
@@ -53,15 +53,15 @@ const Tracks = () => {
 
              <div key="1" className="flex p-4 shadow border-b border-black items-center justify-between ">
             <div className='flex gap-5 items-center'>
-            <div className='mr-[10vw]' style={{fontSize:"2vh"}}>
+            <div className='mr-[5vw] text-white ' style={{fontSize:"2vh"}}>
                     <p>#</p>
                 </div>
-                <div className='mr-[20vw]' style={{fontSize:"2vh"}}>
+                <div className='mr-[20vw] text-white ' style={{fontSize:"2vh"}}>
                     <p>Title</p>
                 </div>
 
 
-                <div className='mr-[9vw]' style={{fontSize:"2vh"}}>
+                <div className='mr-[9vw] text-white ' style={{fontSize:"2vh"}}>
                     <h3>Album</h3>
                 </div>
             </div>
@@ -74,40 +74,40 @@ const Tracks = () => {
         {router.type == "playlist" && tracks.map((item) => (
           <div key={item.id} className="flex p-4 shadow border-t border-black items-center justify-between bg-zinc-800">
             <div className='flex gap-5 items-center'>
-                <h6>{tracks.indexOf(item)+1}</h6>
+                <h6 className='text-white' >{tracks.indexOf(item)+1}</h6>
               <img src={item.track.album.images.length > 0 ? item.track.album.images[0].url : '/images/unknown.png'} alt={item.name} className="w-[40px] h-auto mb-4" />
                 <div style={{width:"20vw",marginRight:"1vw"}} className='text-ellipsis overflow-hidden'>
-                    <h6 style={{fontSize:"2vh"}} className="font-semibold">{item.track.name}</h6>
+                    <h6 style={{fontSize:"2vh"}} className="font-semibold text-white ">{item.track.name}</h6>
                 </div>
                 <div style={{width:"18vw"}}>
-                <p style={{fontSize:"2vh"}}>{item.track.album.name}</p>
+                <p style={{fontSize:"2vh"}} className='text-white '>{item.track.album.name}</p>
                 </div>
-            </div>
             <div style={{width:"4vw"}}>
             <button onClick={()=>handlePlay(item.track.name,item.track.album.name,item.track.duration_ms,item.track.preview_url,item.track.album.images[0].url )} className='height-none '>
               <AiFillPlayCircle size={50} className='text-green-500'/>
             </button>
+            </div>
             </div>
           </div>
         ))}
 
 
 {router.type == "album" && tracks.map((item) => (
-          <div key={item.id} className="flex p-4 shadow border-t border-black items-center justify-between bg-zinc-800">
+          <div key={item.id} className="flex p-4 shadow border-t border-black items-center justify--content-between bg-zinc-800">
             <div className='flex gap-5 items-center'>
-                <h6>{tracks.indexOf(item)+1}</h6>
+                <h6 className='text-white '>{tracks.indexOf(item)+1}</h6>
               <img src={playlistData.images?.length >0 ? playlistData.images[0].url:'/images/unknown.png'} alt={item.name} className="w-[40px] h-auto mb-4" />
                 <div style={{width:"20vw",marginRight:"1vw"}} className='text-ellipsis overflow-hidden'>
-                    <h6 style={{fontSize:"2vh"}} className="font-semibold">{item.name}</h6>
+                    <h6 style={{fontSize:"2vh"}} className="font-semibold text-white ">{item.name}</h6>
                 </div>
                 <div style={{width:"18vw"}}>
-                <p style={{fontSize:"2vh"}}>{playlistData.name}</p>
+                <p style={{fontSize:"2vh"}} className='text-white '>{playlistData.name}</p>
                 </div>
-            </div>
-            <div style={{width:"4vw"}}>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="text-black hover:underline mt-2 block text-white hover:text-green-500">
-                <AiFillPlayCircle size={30} color='white'/>
-            </a>
+                <div style={{marginLeft:"2vw"}}>
+                <button onClick={()=>handlePlay(item.name,playlistData.name,item.duration_ms,item.preview_url, playlistData.images[0].url)} className='height-none '>
+                    <AiFillPlayCircle size={30} className='text-green-500'/>
+                </button>
+              </div>
             </div>
           </div>
         ))}

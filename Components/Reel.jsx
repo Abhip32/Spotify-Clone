@@ -48,7 +48,7 @@ const ChannelReel = ({ items ,type}) => {
           <div className="bg-transparent border-none shadow dark:bg-transparent hover:bg-black p-3 h-min">
             <img className="rounded-lg h-1/4" src={item.images.length >0? item.images[0].url : '/images/unknown.png'} alt="" />
             <div className="p-5">
-                <h5 className="mb-2 font-xl font-bold tracking-tight text-gray-900 dark:text-white sm:font-sm">{item.name}</h5>
+                <h5 className="mb-2 font-xl text-white font-bold tracking-tight text-gray-900 dark:text-white sm:font-sm">{item.name}</h5>
             </div>
             </div>
           </>}

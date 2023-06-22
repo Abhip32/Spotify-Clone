@@ -94,7 +94,7 @@ const SearchContent = () => {
         </div>}
       <div className={searchQuery === ""  && browseItems.length >0? 'p-5' : 'hidden'}>
         <div className='flex justify-between'>
-          <div className='font-bold text-2xl'>
+          <div className='font-bold text-white text-white text-2xl'>
             <h1>New Release</h1>
             <br />
           </div>
@@ -106,7 +106,7 @@ const SearchContent = () => {
               <div className="bg-black text-white border-none shadow p-3 h-full rounded-lg hover:bg-zinc-700 hover:text-black">
                 <img className="rounded-lg" src={playlist.images.length ? playlist.images[0].url : '/images/unknown.png'} alt="" />
                 <div className="p-5">
-                  <h5 className="mb-2 font-xl font-bold tracking-tight text-gray-900 dark:text-white sm:font-sm">{playlist.name}</h5>
+                  <h5 className="mb-2 font-xl font-bold text-white text-white tracking-tight text-gray-900 dark:text-white sm:font-sm">{playlist.name}</h5>
                   <button onClick={()=>handlePlayClick(playlist.id,playlist.type)} className='height-none '>
             <AiFillPlayCircle size={50} className='text-green-500'/>
         </button>
@@ -125,15 +125,15 @@ const SearchContent = () => {
        
         <div className='grid sm:grid-cols-2 md:cols-1 bg-black gap-4 p-3 sm:p-0 border-none rounded-xl' >
         <div className="bg-transparent border-none shadow dark:bg-transparent hover:bg-black p-3 flex flex-col gap-10 justify-center">
-          <h4  className='font-bold text-xl p-1' style={{float:"left"}}>Top Result</h4>
+          <h4  className='font-bold text-white text-white text-xl p-1' style={{float:"left"}}>Top Result</h4>
           <div class="flex justify-center items-center">
   <img class="rounded-lg h-52 max-w-full" src={artists[0]?.images.length ? artists[0]?.images[0].url : '/images/unknown.png'} alt="" />
 </div>
 
-        <h5 className="font-bold text-xl p-1">{artists[0]?.name}</h5>
+        <h5 className="font-bold text-white text-white text-xl p-1">{artists[0]?.name}</h5>
 </div>
           <div className='overflow-y-auto rounded-xl m-2'>
-          <div className='font-bold text-2xl p-3 h-[50vh]' style={{overflowX:"hidden"}}>
+          <div className='font-bold text-white text-white text-2xl p-3 h-[50vh]' style={{overflowX:"hidden"}}>
                           <h1>Playlists</h1><br/>
             
             {
@@ -159,7 +159,7 @@ const SearchContent = () => {
         </div>
 
         <div className='p-5'>
-            <div className='font-bold text-2xl p-3'>
+            <div className='font-bold text-white text-white text-2xl p-3'>
                           <h1> Artists</h1>
             </div>
 
@@ -169,7 +169,7 @@ const SearchContent = () => {
           </div>
 
           <div className='p-3'>
-            <div className='font-bold text-2xl p-5'>
+            <div className='font-bold text-white text-white text-2xl p-5'>
                           <h1> Episodes</h1>
             
             </div>
@@ -180,7 +180,7 @@ const SearchContent = () => {
           </div>
 
           <div className='p-3'>
-            <div className='font-bold text-2xl p-3'>
+            <div className='font-bold text-white text-white text-2xl p-3'>
                           <h1> Shows</h1>
             </div>
 

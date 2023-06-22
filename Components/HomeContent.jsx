@@ -70,11 +70,11 @@ const HomeContent = () => {
             }
         }>
             <div className='flex justify-between'>
-                <div className='p-5 font-bold text-2xl sm:font-md'>
+                <div className='p-5 font-bold text-white text-2xl sm:font-md'>
                     <span>{message}</span>
                 </div>
 
-                <div className='p-5 font-bold text-md'>
+                <div className='p-5 font-bold text-white text-md'>
                     <span style={
                         {
                             backgroundColor: "white",
@@ -99,12 +99,12 @@ const HomeContent = () => {
 
             <div className='p-5'>
                 <div className='flex justify-between'>
-                    <div className='font-bold text-2xl'>
+                    <div className='font-bold text-white text-2xl'>
                         <h1>Featured Playlists</h1>
                         <br/>
                     </div>
                     <div>
-                        <button className="text-white font-bold text-sm hover:text-green-500"
+                        <button className="text-white font-bold text-white text-sm hover:text-green-500"
                             onClick={toggleShowAllFeatured}>
                                {showAllFeatured ? "Hide" : "Show All"}
                         </button>
@@ -118,7 +118,7 @@ const HomeContent = () => {
     <div className="bg-transparent border-none shadow dark:bg-transparent hover:bg-black p-3 h-min">
       <img className="rounded-lg h-1/4" src={playlist.images.length ? playlist.images[0].url : '/images/unknown.png'} alt="" />
       <div className="p-5">
-        <h5 className="mb-2 font-xl font-bold tracking-tight text-gray-900 dark:text-white sm:font-sm">{playlist.name}</h5>
+        <h5 className="mb-2 font-xl font-bold text-white tracking-tight text-gray-900 dark:text-white sm:font-sm">{playlist.name}</h5>
         <button onClick={()=>handlePlayClick(playlist.id,'playlist')} className='height-none '>
             <AiFillPlayCircle size={50} className='text-green-500'/>
         </button>
@@ -132,13 +132,13 @@ const HomeContent = () => {
 
             <div className='p-5'>
                 <div className='flex justify-between'>
-                    <div className='font-bold text-2xl'>
+                    <div className='font-bold text-white text-2xl'>
                         <h1>Top Artists</h1>
                         <br/>
                     </div>
                     
                     <div>
-                        <button className="text-white font-bold text-sm hover:text-green-500"
+                        <button className="text-white font-bold text-white text-sm hover:text-green-500"
                             onClick={toggleShowAllArtists}>
                             {showAllArtists ? "Hide" : "Show All"}
                         </button>
@@ -160,7 +160,7 @@ const HomeContent = () => {
                                 }
                                 alt=""/>
                             <div className="p-5">
-                                <h5 className="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white sm:font-sm">
+                                <h5 className="mb-2 text-lg font-bold text-white tracking-tight text-gray-900 dark:text-white sm:font-sm">
                                     {
                                     artist.name
                                 }</h5>
