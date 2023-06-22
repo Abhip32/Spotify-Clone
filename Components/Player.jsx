@@ -25,7 +25,7 @@ const Player = (props) => {
             <div className='player flex bg-zinc-900 h-full'>
                 <div className='info' style={{width:"25vw",display:"flex",alignItems:"center"}}>
                 {props.type !="mobile" && <img src={songData?.img ? songData.img : '/images/unknown.png'} style={{height:"10vh",width:"10vh",padding:"5px"}}/>}
-                {props.type =="mobile" && <img src={songData?.img ? songData.img : '/images/unknown.png'} style={{height:"5vh",width:"5vh",padding:"5px"}}/>}
+                {props.type =="mobile" && <img src={songData?.img ? songData.img : '/images/unknown.png'} style={{height:"5vh",width:"5vh"}}/>}
                     <div className='text-white font-semibold'>
                      {props.type !="mobile" &&    <span  style={{height:"50%", textOverflow:"ellipsis",fontSize:"2vh"}}>{songData?.name}</span>}
                      {props.type !="mobile" &&    <span  style={{height:"50%", textOverflow:"ellipsis",fontSize:"2vh"}}>{songData?.artist}</span>}
