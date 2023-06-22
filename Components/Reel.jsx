@@ -2,7 +2,6 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Link from 'next/link';
-import unknown from "../assets/unknown.png"
 
 
 const ChannelReel = ({ items ,type}) => {
@@ -42,12 +41,12 @@ const ChannelReel = ({ items ,type}) => {
       {items.map((item) => (
         <Link key={item.id} className='p-2 items-center'  href={item.external_urls.spotify}>
           {type =="round"?
-          <><img className='rounded-full' src={item.images.length > 0 ? item.images[0].url : unknown} alt={item.title} style={{ width: '155px', height: '150px' }}/>
+          <><img className='rounded-full' src={item.images.length > 0 ? item.images[0].url : '/images/unknown.png'} alt={item.title} style={{ width: '155px', height: '150px' }}/>
           <h1 className='text-white'>{item.name}</h1>
           </>:
           <>
           <div className="bg-transparent border-none shadow dark:bg-transparent hover:bg-black p-3 h-min">
-            <img className="rounded-lg h-1/4" src={item.images.length >0? item.images[0].url : unknown} alt="" />
+            <img className="rounded-lg h-1/4" src={item.images.length >0? item.images[0].url : '/images/unknown.png'} alt="" />
             <div className="p-5">
                 <h5 className="mb-2 font-xl font-bold tracking-tight text-gray-900 dark:text-white sm:font-sm">{item.name}</h5>
             </div>

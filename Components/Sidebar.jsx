@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { AiFillHeart, AiFillHome, AiFillLike, AiFillSecurityScan, AiOutlineSearch } from 'react-icons/ai';
 import Player from './Player';
-import Logo from "../assets/Logo.png"
+
 
 const Sidebar = ({ children }) => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -37,7 +37,7 @@ const Sidebar = ({ children }) => {
             <nav className="bg-black fixed top-0 w-full h-16 flex justify-center items-center">
               <div className="Logo p-5">
                 <img
-                  src={Logo.src}
+                  src="/images/logo.png"
                   className="h-8"
                   alt="spotify"
                 />
@@ -69,7 +69,7 @@ const Sidebar = ({ children }) => {
             <div className="sidebar fixed top-0 bottom-0 lg:left-0 p-2 w-[20vw] text-center bg-black h-[88vh]">
               <div className="Logo p-5 items-center">
                 <img
-                  src={Logo.src}
+                  src="/images/Logo.png"
                   alt="spotify"
                 />
               </div>

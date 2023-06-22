@@ -3,7 +3,6 @@ import { browseNew, search, searchArtists, searchPlaylists, searchShows, searchE
 import React, { useEffect, useState } from 'react';
 import { AiOutlineSearch, AiOutlineUser, AiFillPlayCircle } from 'react-icons/ai';
 import Link from 'next/link';
-import unknown from '../assets/unknown.png';
 import ChannelReel from './Reel';
 import { useRouter } from 'next/navigation';
 
@@ -104,7 +103,7 @@ const SearchContent = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:p-0 border-none">
           {browseItems.map((playlist) => (
               <div className="bg-black text-white border-none shadow p-3 h-full rounded-lg hover:bg-zinc-700 hover:text-black">
-                <img className="rounded-lg" src={playlist.images.length ? playlist.images[0].url : unknown.src} alt="" />
+                <img className="rounded-lg" src={playlist.images.length ? playlist.images[0].url : '/images/unknown.png'} alt="" />
                 <div className="p-5">
                   <h5 className="mb-2 font-xl font-bold tracking-tight text-gray-900 dark:text-white sm:font-sm">{playlist.name}</h5>
                   <button onClick={()=>handlePlayClick(playlist.id,playlist.type)} className='height-none '>
@@ -127,7 +126,7 @@ const SearchContent = () => {
         <div className="bg-transparent border-none shadow dark:bg-transparent hover:bg-black p-3 flex flex-col gap-10 justify-center">
           <h4  className='font-bold text-xl p-1' style={{float:"left"}}>Top Result</h4>
           <div class="flex justify-center items-center">
-  <img class="rounded-lg h-52 max-w-full" src={artists[0]?.images.length ? artists[0]?.images[0].url : unknown.src} alt="" />
+  <img class="rounded-lg h-52 max-w-full" src={artists[0]?.images.length ? artists[0]?.images[0].url : '/images/unknown.png'} alt="" />
 </div>
 
         <h5 className="font-bold text-xl p-1">{artists[0]?.name}</h5>
@@ -140,7 +139,7 @@ const SearchContent = () => {
               playlists.map((item)=>(
                 <div key={item.id} className="flex p-2 shadow border-t border-black items-center justify-between bg-zinc-800">
                 <div className='flex  items-center gap-10'>
-                  <img src={item.images.length > 0 ? item.images[0].url : unknown.src} alt={item.name} className="w-[60px] h-auto mb-4" />
+                  <img src={item.images.length > 0 ? item.images[0].url : '/images/unknown.png'} alt={item.name} className="w-[60px] h-auto mb-4" />
                     <div style={{width:"20vw",marginRight:"1vw"}} className='text-ellipsis overflow-hidden'>
                         <h6 style={{fontSize:"2vh"}} className="font-semibold">{item.name}</h6>
                         

@@ -6,8 +6,6 @@ import React, {useEffect, useState} from 'react'
 import SideImgCard from './SideImgCard'
 import {AiFillPlayCircle, AiOutlineUser} from 'react-icons/ai'
 import Link from 'next/link'
-import unknown from '../assets/unknown.png'
-import Liked from '../assets/liked.png'
 import { useRouter } from 'next/navigation'
 
 const HomeContent = () => {
@@ -94,7 +92,7 @@ const HomeContent = () => {
 
             <div className='grid grid-cols-2 gap-4 p-5 sm:font-sm'>
                 <div class="..."><SideImgCard heading={"Liked Songs"}
-                        url={Liked}
+                        url="/images/Liked.png"
                         navi={"/LikedSongs"}/></div>
             </div>
 
@@ -117,7 +115,7 @@ const HomeContent = () => {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-5 sm:p-0 border-none">
   {displayedPlaylists.map((playlist) => (
     <div className="bg-transparent border-none shadow dark:bg-transparent hover:bg-black p-3 h-min">
-      <img className="rounded-lg h-1/4" src={playlist.images.length ? playlist.images[0].url : unknown.src} alt="" />
+      <img className="rounded-lg h-1/4" src={playlist.images.length ? playlist.images[0].url : '/images/unknown.png'} alt="" />
       <div className="p-5">
         <h5 className="mb-2 font-xl font-bold tracking-tight text-gray-900 dark:text-white sm:font-sm">{playlist.name}</h5>
         <button onClick={()=>handlePlayClick(playlist.id,'playlist')} className='height-none '>

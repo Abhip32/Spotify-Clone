@@ -4,7 +4,6 @@ import { getTopitemsM, setPlayingItem } from '@/utils/Home'
 import React, { useEffect, useState } from 'react'
 import { AiFillHeart,AiFillPlayCircle } from 'react-icons/ai'
 import moment from 'moment'
-import unknown from '../../assets/unknown.png'
 
 const LikedSongs = (props) => {
     const [topItems,setTopitems] = useState([])
@@ -65,7 +64,7 @@ const LikedSongs = (props) => {
           <div key={item.id} className="flex p-4 shadow border-t border-black items-center justify-between bg-zinc-800">
             <div className='flex gap-5 items-center'>
                 <h6>{topItems.indexOf(item)+1}</h6>
-              <img src={item.album.images.length > 0 ? item.album.images[0].url : unknown.src} alt={item.name} className="w-[40px] h-auto mb-4" />
+              <img src={item.album.images.length > 0 ? item.album.images[0].url : '/images/unknown.png'} alt={item.name} className="w-[40px] h-auto mb-4" />
                 <div style={{width:"20vw",marginRight:"1vw"}} className='text-ellipsis overflow-hidden'>
                     <h6 style={{fontSize:"2vh"}} className="font-semibold">{item.name}</h6>
                     <h6 style={{fontSize:"2vh"}} className="text-gray mt-2">{item.artists[0].name}</h6>

@@ -4,7 +4,6 @@ import { getTopitemsM } from '@/utils/UserInfo'
 import React, { useEffect, useState } from 'react'
 import { AiFillHeart,AiFillPlayCircle } from 'react-icons/ai'
 import moment from 'moment'
-import unknown from '../../../../assets/unknown.png'
 import { getPlaylistInfo, searchTracks } from '@/utils/Search'
 import { useParams, useRouter } from 'next/navigation';
 import { setPlayingItem } from '@/utils/Home'
@@ -37,7 +36,7 @@ const Tracks = () => {
         <Sidebar>
             <div className="w-full b" style={{ backgroundImage: "linear-gradient(to bottom, #0047AB, black)",minHeight:"100vh"}}>
             <div className='flex p-10 gap-10 items-center'> 
-                <img className="Icon w-1/4" src={playlistData.images?.length >0 ? playlistData.images[0].url:unknown}  style={{boxShadow:"1px 1px 20px black",padding:"30px",backgroundImage:"linear-gradient(145deg, #b24592, black])"}}/>
+                <img className="Icon w-1/4" src={playlistData.images?.length >0 ? playlistData.images[0].url:'/images/unknown.png'}  style={{boxShadow:"1px 1px 20px black",padding:"30px",backgroundImage:"linear-gradient(145deg, #b24592, black])"}}/>
         
                     <div className="info">
             <h2 className='text-xl font-semibold' style={{fontSize:"2vh"}}>{router.type}</h2>
@@ -75,7 +74,7 @@ const Tracks = () => {
           <div key={item.id} className="flex p-4 shadow border-t border-black items-center justify-between bg-zinc-800">
             <div className='flex gap-5 items-center'>
                 <h6>{tracks.indexOf(item)+1}</h6>
-              <img src={item.track.album.images.length > 0 ? item.track.album.images[0].url : unknown.src} alt={item.name} className="w-[40px] h-auto mb-4" />
+              <img src={item.track.album.images.length > 0 ? item.track.album.images[0].url : '/images/unknown.png'} alt={item.name} className="w-[40px] h-auto mb-4" />
                 <div style={{width:"20vw",marginRight:"1vw"}} className='text-ellipsis overflow-hidden'>
                     <h6 style={{fontSize:"2vh"}} className="font-semibold">{item.track.name}</h6>
                 </div>
@@ -96,7 +95,7 @@ const Tracks = () => {
           <div key={item.id} className="flex p-4 shadow border-t border-black items-center justify-between bg-zinc-800">
             <div className='flex gap-5 items-center'>
                 <h6>{tracks.indexOf(item)+1}</h6>
-              <img src={playlistData.images?.length >0 ? playlistData.images[0].url:unknown.src} alt={item.name} className="w-[40px] h-auto mb-4" />
+              <img src={playlistData.images?.length >0 ? playlistData.images[0].url:'/images/unknown.png'} alt={item.name} className="w-[40px] h-auto mb-4" />
                 <div style={{width:"20vw",marginRight:"1vw"}} className='text-ellipsis overflow-hidden'>
                     <h6 style={{fontSize:"2vh"}} className="font-semibold">{item.name}</h6>
                 </div>
