@@ -34,7 +34,7 @@ const HomeContent = () => {
         if(window.location.href.includes('access_token'))
         {     
             getUserInfo(window.location.href).then(async(data)=>{
-     
+               
         })
         }
        setUserData(JSON.parse(localStorage.getItem('spotify-data')))
@@ -52,6 +52,9 @@ const HomeContent = () => {
             const response=data;
             setTopArtists(response.items)
         })
+
+       
+        
 
     }, [])
 
@@ -112,7 +115,7 @@ const HomeContent = () => {
                 {!displayedPlaylists.length>0 && <div className="flex justify-center items-center h-100">
           <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-gray-900"></div>
         </div>}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-5 sm:p-0 border-none">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-[1vw] sm:p-0 border-none">
   {displayedPlaylists.map((playlist) => (
     <div className="bg-transparent border-none shadow dark:bg-transparent hover:bg-black p-3 h-min">
       <img className="rounded-lg h-1/4" src={playlist.images.length ? playlist.images[0].url : '/images/unknown.png'} alt="" />
@@ -153,7 +156,7 @@ const HomeContent = () => {
                             artist.external_urls.spotify
                         }>
 
-                            <img style={{borderRadius:"100vw",width:"200px",height:"200px"}}
+                            <img style={{borderRadius:"300px",width:"200px"}}
                                 src={
                                     artist.images.length ? artist.images[0].url : unknown.src
                                 }

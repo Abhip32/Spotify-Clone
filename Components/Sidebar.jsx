@@ -48,7 +48,7 @@ const Sidebar = ({ children }) => {
             <div style={{width:"100vw",height:"71vh",overflowX:"hidden"}}>
                 {children}
               </div>
-              <div style={{width:"100vw",height:"15vh",overflow:"hidden"}}>
+              <div style={{width:"100vw",height:"12vh",overflow:"hidden"}}>
                   <Player type="mobile"/>
               </div>
             </div>
