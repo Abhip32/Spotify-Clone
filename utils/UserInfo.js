@@ -25,7 +25,7 @@ export const getUserInfo = async (pass) => {
         
       };
       const objectString = JSON.stringify(userInfo);
-
+      localStorage.removeItem('spotify-data');
       localStorage.setItem("spotify-data",objectString)
       
       return userInfo;
