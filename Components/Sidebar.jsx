@@ -44,7 +44,7 @@ const Sidebar = ({ children }) => {
               </div>
             </nav>
 
-            <div className='fixed top-16 overflow-hidden' style={{width:"100vw",height:"100vh"}}>
+            <div className='fixed top-16 overflow-hidden' style={{width:"100vw",height:"100vh",backgroundColor:"black"}}>
             <div style={{width:"100vw",height:"71vh",overflowX:"hidden"}}>
                 {children}
               </div>

@@ -112,7 +112,7 @@ const HomeContent = () => {
                         </button>
                     </div>
                 </div>
-                {!displayedPlaylists.length>0 && <div className="flex justify-center items-center h-100">
+                {displayedPlaylists.length==0 && <div className="flex justify-center items-center h-100">
           <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-gray-900"></div>
         </div>}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-[1vw] sm:p-0 border-none">
@@ -146,7 +146,7 @@ const HomeContent = () => {
                         </button>
                     </div>
                 </div>
-                {!displayedArtists.length>0 && <div className="flex justify-center items-center h-100">
+                {displayedArtists.length==0 && <div className="flex justify-center items-center h-100">
           <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-gray-900"></div>
         </div>}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -156,7 +156,7 @@ const HomeContent = () => {
                             artist.external_urls.spotify
                         }>
 
-                            <img style={{borderRadius:"300px",width:"200px"}}
+                            <img style={{borderRadius:"300px",width:"150px",height:"150px"}}
                                 src={
                                     artist.images.length ? artist.images[0].url : unknown.src
                                 }
