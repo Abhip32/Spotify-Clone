@@ -5,7 +5,7 @@ export default function Login() {
   const loginRedirect= async () => {
     const client_id = "f9a983b53ef148f9926dea5b4209cded";
     const api_uri = "https://accounts.spotify.com/authorize";
-    const redirect_uri = "http://192.168.43.12:3000/home"
+    const redirect_uri = "https://spotify-clone-abhip32.vercel.app/home"
     const scope = [
       "user-read-private",
       "user-read-email",
